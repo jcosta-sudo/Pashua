@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2003-2018, Carsten Blüm <carsten@bluem.net>
+ * Copyright (c) 2003-2018, Carsten Bl≈∏m <carsten@bluem.net>
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -10,7 +10,7 @@
  * - Redistributions in binary form must reproduce the above copyright notice, this
  *   list of conditions and the following disclaimer in the documentation and/or
  *   other materials provided with the distribution.
- * - Neither the name of Carsten Blüm nor the names of his contributors may be
+ * - Neither the name of Carsten Bl≈∏m nor the names of his contributors may be
  *   used to endorse or promote products derived from this software without specific
  *   prior written permission.
  *
@@ -37,6 +37,11 @@
     PshWindow *window = [[PshWindow alloc] initWithAttributes:theAttributes
                                                   andElements:theElements
                                                resultEncoding:enc];
+              
+    [[window standardWindowButton:NSWindowCloseButton] setHidden:YES];
+    [[window standardWindowButton:NSWindowMiniaturizeButton] setHidden:YES];
+    [[window standardWindowButton:NSWindowZoomButton] setHidden:YES];
+              
     [window makeKeyAndOrderFront:nil];
     return window;
 }
@@ -341,7 +346,7 @@
                 // Workaround for the issue described in <8B41E958-2714-42FB-958C-A891CEE88FE1@telfort.nl>
                 // and <46D6724D-46BF-46BF-8560-C75A4C41C203@telfort.nl>
                 // Summary: when a button (= custom closing button, i.e.: not default or cancel) is clicked, the
-                // state is set, and this is retained if the window stays on the screen in case of “mandatory”
+                // state is set, and this is retained if the window stays on the screen in case of √ímandatory√ì
                 // errors. Upon next click, the state switches from On to Off -- or the state is erroneously On,
                 // even if another button is used to close the dialog
                 [[elementContainer element] setState:0];
